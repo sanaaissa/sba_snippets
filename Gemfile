@@ -22,7 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'mailcatcher'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,9 +44,16 @@ gem 'sweetalert-rails'
 # https://github.com/mois3x/sweet-alert-rails-confirm
 gem 'sweet-alert-confirm'
 
+gem 'resque'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+gem 'byebug'
+
+gem 'coderay'
+gem 'pygments.rb'
+gem 'uv'
+
 end
 
 group :development do
