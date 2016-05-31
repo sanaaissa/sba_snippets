@@ -77,9 +77,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  Elasticsearch::Model.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
 
-  gmail_username: 'sanaa.testing@gmail.com'
-  gmail_password: 'Rails123@'
+  GMAIL_USERNAME: 'sanaa.testing@gmail.com'
+  GMAIL_PASSWORD: 'Rails123@'
 
   config.action_mailer.delivery_method = :smtp
 
@@ -87,8 +88,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :user_name            => ENV['gmail_username'],
-  :password             => ENV['gmail_password'],
+  :user_name            => ENV['GMAIL_USERNAME'],
+  :password             => ENV['GMAIL_PASSWORD'],
   :authentication       => "plain",
  :enable_starttls_auto => true
  }
