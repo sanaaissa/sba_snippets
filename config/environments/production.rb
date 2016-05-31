@@ -79,9 +79,6 @@ Rails.application.configure do
 
   Elasticsearch::Model.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
 
-  GMAIL_USERNAME: 'sanaa.testing@gmail.com'
-  GMAIL_PASSWORD: 'Rails123@'
-
   config.action_mailer.delivery_method = :smtp
 
  # SMTP settings for gmail
