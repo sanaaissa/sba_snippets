@@ -78,8 +78,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  gmail_username: 'username@gmail.com'
-  gmail_password: 'Gmail password'
+  gmail_username: 'sanaa.testing@gmail.com'
+  gmail_password: 'Rails123@'
 
   config.action_mailer.delivery_method = :smtp
 

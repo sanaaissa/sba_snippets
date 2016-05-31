@@ -1,3 +1,4 @@
+
 class Snippet < ActiveRecord::Base
   searchkick
 
@@ -16,5 +17,7 @@ class Snippet < ActiveRecord::Base
 
   scope :latest, -> { order(updated_at: :desc) }
 
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
 end
