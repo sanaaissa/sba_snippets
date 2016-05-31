@@ -17,6 +17,7 @@ default: &default
   password: <%= ENV['MYSQL_PASSWORD'] %>
 
 
+
 development:
   <<: *default
   database: sba_snippets_development
@@ -48,7 +49,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: sba_snippets_production
-  username: sba_snippets
-  password: <%= ENV['SBA_SNIPPETS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
