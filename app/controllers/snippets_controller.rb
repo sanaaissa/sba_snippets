@@ -5,7 +5,11 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.latest
+      if params[:query]
+     @snippets = Snippet.search(params[:query]).records
+   else
+     @snippets = Snippet.all
+   end
   end
 
   # GET /snippets/1
@@ -32,8 +36,6 @@ class SnippetsController < ApplicationController
     respond_to do |format|
       if @snippet.save
         #Resque.enqueue(SnippetHighlighter, @snippet.id)
-        
-
         format.html { redirect_to @snippet, :notice => "Successfully created snippet." }
         format.json { render :show, status: :created, location: @snippet }
       else
